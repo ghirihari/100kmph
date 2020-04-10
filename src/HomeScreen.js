@@ -1,0 +1,76 @@
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { Col, Row, Grid } from "react-native-easy-grid";
+
+export default class HomeScreen extends Component {
+    constructor(props) {
+        super(props);   
+        // console.log(props.navigation);
+    }
+
+    render() {
+        return (
+            <Grid>
+                <Row  style={styles.panel}>
+                   
+                       <ImageBackground style= {styles.image}   
+                        source={require('../assets/images/one.jpg')}
+                    >
+                        <Text style={styles.imgText}>Ride</Text>
+                    </ImageBackground>
+                </Row>
+                <Row style={styles.panel}>
+                    <ImageBackground style= {styles.image}   
+                        source={require('../assets/images/two.jpg')}
+                    >
+                        <Text style={styles.imgText}>Merchandise</Text>
+                    </ImageBackground>
+                </Row>
+                <Row style={styles.panel}>
+                    <ImageBackground style= {styles.image}   
+                        source={require('../assets/images/three.jpg')}
+                    >
+                        <Text style={styles.imgText}>Calculator</Text>
+                    </ImageBackground>
+                </Row>
+                <Row style={styles.panel}>
+                    <ImageBackground style= {styles.image}   
+                        source={require('../assets/images/four.jpg')}
+                    >
+                        <Text style={styles.imgText}>Profile</Text>
+                    </ImageBackground>
+                </Row>
+
+            </Grid>
+        );
+    }
+}
+
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center'
+        },
+    panel: {
+        backgroundColor: '#fe4a49',
+        margin: 5,
+        borderRadius: 10,
+    },
+    image:{
+            flex:1 ,
+            justifyContent:'center', 
+            width: undefined, 
+            height: undefined, 
+            borderRadius: 10
+    },
+    imgText:{
+        color:'white',
+        textAlign:'center',
+        fontSize: 50,
+        fontStyle:'italic'
+
+    }
+});
+

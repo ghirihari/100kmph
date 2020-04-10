@@ -3,47 +3,11 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function CalculatorScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Calculator</Text>
-    </View>
-  );
-}
-
-function RideScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Ride!</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
-function MerchScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Shop</Text>
-    </View>
-  );
-}
+import HomeScreen from './src/HomeScreen'
+import CalculatorScreen from './src/CalculatorScreen'
+import RideScreen from './src/RideScreen'
+import UserScreen from './src/UserScreen'
+import ShopScreen from './src/ShopScreen'
 
 const Tab = createBottomTabNavigator();
 
@@ -72,7 +36,7 @@ export default function App() {
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'tomato',
+            activeTintColor: '#fe4a49',
             inactiveTintColor: 'gray',
             showLabel: false
           }}
@@ -80,8 +44,8 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Planner" component={CalculatorScreen} />
         <Tab.Screen name="Ride" component={RideScreen} />
-        <Tab.Screen name="Shop" component={MerchScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Shop" component={ShopScreen} />
+        <Tab.Screen name="Settings" component={UserScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
