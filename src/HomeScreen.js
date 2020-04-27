@@ -10,35 +10,46 @@ export default class HomeScreen extends Component {
 
     render() {
         return (
-            <Grid>
+            <Grid style={styles.container}>
                 <Row  style={styles.panel}>
-                   
+                    <TouchableOpacity 
+                        style={styles.image}
+                        onPress={() => this.props.navigation.navigate('Ride')}>
+                        <ImageBackground style= {styles.image}   
+                            source={require('../assets/images/one.jpg')}>
+                            <Text style={styles.imgText}>Ride</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+                </Row>
+                <Row style={styles.panel}>
+                    <TouchableOpacity 
+                        style={styles.image}
+                        onPress={() => this.props.navigation.navigate('Fund')}>
+                         <ImageBackground style= {styles.image}   
+                            source={require('../assets/images/two.jpg')}>
+                            <Text style={styles.imgText}>Fund</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+                </Row>
+                <Row style={styles.panel}>
+                    <TouchableOpacity 
+                        style={styles.image}
+                        onPress={() => this.props.navigation.navigate('Shop')}>
                        <ImageBackground style= {styles.image}   
-                        source={require('../assets/images/one.jpg')}
-                    >
-                        <Text style={styles.imgText}>Ride</Text>
-                    </ImageBackground>
+                            source={require('../assets/images/three.jpg')}>
+                            <Text style={styles.imgText}>Shop</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
                 </Row>
                 <Row style={styles.panel}>
-                    <ImageBackground style= {styles.image}   
-                        source={require('../assets/images/two.jpg')}
-                    >
-                        <Text style={styles.imgText}>Merchandise</Text>
-                    </ImageBackground>
-                </Row>
-                <Row style={styles.panel}>
-                    <ImageBackground style= {styles.image}   
-                        source={require('../assets/images/three.jpg')}
-                    >
-                        <Text style={styles.imgText}>Calculator</Text>
-                    </ImageBackground>
-                </Row>
-                <Row style={styles.panel}>
-                    <ImageBackground style= {styles.image}   
-                        source={require('../assets/images/four.jpg')}
-                    >
-                        <Text style={styles.imgText}>Profile</Text>
-                    </ImageBackground>
+                    <TouchableOpacity 
+                        style={styles.image}
+                        onPress={() => this.props.navigation.navigate('Profile')}>
+                        <ImageBackground style= {styles.image}   
+                            source={require('../assets/images/four.jpg')}>
+                            <Text style={styles.imgText}>Profile</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
                 </Row>
 
             </Grid>
@@ -51,7 +62,8 @@ const styles = StyleSheet.create({
     container:{
         flex: 1, 
         justifyContent: 'center', 
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:'#1B1E23',
         },
     panel: {
         backgroundColor: '#fe4a49',
@@ -69,7 +81,10 @@ const styles = StyleSheet.create({
         color:'white',
         textAlign:'center',
         fontSize: 50,
-        fontStyle:'italic'
+        fontStyle:'italic',
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 50,
 
     }
 });

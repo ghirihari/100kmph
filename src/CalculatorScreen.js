@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center', 
         alignItems: 'center', 
+        backgroundColor:'#1B1E23'
     },
 
     containerTop: {
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
     },
     formLabel: {
         fontSize: 20,
-        color: 'black',
+        color: 'white',
     },
     
     row2: {
